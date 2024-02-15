@@ -1,6 +1,6 @@
 # NoDura
 
-This is a small Fabric server-side mod that allows players to configure whether items in their inventories, such as armor and tools, should receive damage when used.
+This is a small Fabric server-side mod that allows players to configure whether items in their inventories, such as armor and tools, should be damaged when used.
 
 ## Usage
 
