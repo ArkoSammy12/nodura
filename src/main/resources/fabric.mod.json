@@ -5,7 +5,8 @@
 	"name": "no-dura",
 	"description": "A simple Minecraft Fabric server-side mod to disable item durability on a per-player basis. ",
 	"authors": [
-		"ArkoSammy12"
+		"ArkoSammy12",
+		"Swanlab"
 	],
 	"contact": {
 		"homepage": "https://github.com/ArkoSammy12",

@@ -4,7 +4,7 @@ This is a small Fabric server-side mod that allows players to configure whether 
 
 ## Usage
 
-Simply use the command `/nodura toggle [true|false]` to toggle the durability mechanic for yourself. You can also just do `/nodura toggle` to check the status of the toggle.
+Use the command `/nodura toggle [true|false]` to toggle the durability damage mechanic for yourself. You can also just do `/nodura toggle` to check the status of the toggle.
 
 ## Credits
 
