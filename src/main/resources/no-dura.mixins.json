@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "xd.arkosammy.nodura.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ItemStackMixin",
+    "ServerPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
