@@ -12,4 +12,4 @@ Use the command `/nodura doDurability [true|false]` to toggle the durability dam
 
 ## Support
 
-If you would like to report a bug, or make a suggestion, you can do so via the mod's [issue tracker](https://github.com/ArkoSammy12/nodura/issues) or join my [Discord server](https://discord.gg/UKr8n3b3ze). 
+If you would like to report a bug, or make a suggestion, you can do so via the mod's [issue tracker](https://github.com/ArkoSammy12/nodura/issues) or join my [Discord server](https://discord.gg/wScNgcvJ3y). 
