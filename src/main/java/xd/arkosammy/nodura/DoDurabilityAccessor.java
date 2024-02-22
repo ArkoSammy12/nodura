@@ -2,8 +2,8 @@ package xd.arkosammy.nodura;
 
 public interface DoDurabilityAccessor {
 
-    void nodura$setDoDurability(boolean doDurability);
+    void nodura$setDurabilityMode(NoDuraMode noDuraMode);
 
-    boolean nodura$shouldDoDurability();
+    NoDuraMode noDura$getDurabilityMode();
 
 }

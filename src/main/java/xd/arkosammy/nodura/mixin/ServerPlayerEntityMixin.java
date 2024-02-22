@@ -8,31 +8,32 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xd.arkosammy.nodura.DoDurabilityAccessor;
+import xd.arkosammy.nodura.NoDuraMode;
 
 @Mixin(ServerPlayerEntity.class)
 public class ServerPlayerEntityMixin implements DoDurabilityAccessor {
 
     @Unique
-    private boolean doDurability = true;
+    private NoDuraMode noDuraMode = NoDuraMode.DO_DURABILITY;
 
     @Override
-    public void nodura$setDoDurability(boolean doDurability) {
-        this.doDurability = doDurability;
+    public void nodura$setDurabilityMode(NoDuraMode noDuraMode) {
+        this.noDuraMode = noDuraMode;
     }
 
     @Override
-    public boolean nodura$shouldDoDurability() {
-        return this.doDurability;
+    public NoDuraMode noDura$getDurabilityMode() {
+        return this.noDuraMode;
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("RETURN"))
     private void putCustomData(NbtCompound nbt, CallbackInfo ci){
-        nbt.putBoolean("doDurability", this.doDurability);
+        nbt.putString("noDuraMode", this.noDuraMode.asString());
     }
 
     @Inject(method = "readCustomDataFromNbt", at = @At("RETURN"))
     private void readCustomData(NbtCompound nbt, CallbackInfo ci){
-        this.doDurability = nbt.getBoolean("doDurability");
+        this.noDuraMode = NoDuraMode.fromString(nbt.getString("noDuraMode"));
     }
 
 }
