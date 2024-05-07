@@ -6,6 +6,16 @@ This is a small Fabric server-side mod that allows players to configure whether 
 
 Use the command `/nodura doDurability [true|false]` to toggle the durability damage mechanic for yourself. You can also just do `/nodura doDurability` to check the status of the toggle.
 
+## Default NoDura mode
+
+As a server admin, you can also select the default NoDura mode for new players by running
+`/gamerule defaultNoDuraMode <noDuraMode>`
+
+Where `<noDuraMode>` can be one of the following:
+
+- `DoDurability`
+- `NoDurability`
+
 ## Credits
 
 - Thanks to [Swanlab](https://github.com/swanslab) for the mod's icon.

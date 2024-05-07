@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "no-dura",
+	"id": "nodura",
 	"version": "${version}",
 	"name": "no-dura",
 	"description": "A simple Minecraft Fabric server-side mod to disable item durability on a per-player basis. ",
@@ -24,8 +24,8 @@
 		"no-dura.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.6",
-		"minecraft": ">=1.19.2",
+		"fabricloader": ">=0.15.11",
+		"minecraft": ["1.19.2", "1.19.3", "1.19.4", "1.20", "1.20.1", "1.20.2", "1.20.3", "1.20.4"],
 		"java": ">=17",
 		"fabric-api": "*"
 	}

@@ -19,7 +19,7 @@ public class ItemStackMixin {
         if(player == null){
             return original;
         }
-        return original && ((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DO_DURABILITY;
+        return original && ((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DoDurability;
     }
 
     @ModifyExpressionValue(method = "damage(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isDamageable()Z"))
@@ -27,7 +27,7 @@ public class ItemStackMixin {
         if(!(entity instanceof ServerPlayerEntity player)){
             return original;
         }
-        return original && ((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DO_DURABILITY;
+        return original && ((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DoDurability;
     }
 
 }
