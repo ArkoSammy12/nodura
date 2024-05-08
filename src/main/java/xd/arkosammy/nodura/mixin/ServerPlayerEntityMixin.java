@@ -31,7 +31,7 @@ public abstract class ServerPlayerEntityMixin implements DoDurabilityAccessor {
         return this.noDuraMode;
     }
 
-    @Inject(method = "<init>", at = @At("RETURN"))
+    @Inject(method = "<init>*", at = @At("RETURN"), remap = false)
     private void onServerPlayerEntity(CallbackInfo ci) {
         this.noDuraMode = this.getServerWorld().getGameRules().get(NoDura.DEFAULT_NO_DURA_MODE).get();
     }
