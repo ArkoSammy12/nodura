@@ -28,7 +28,7 @@ public class NoDura implements DedicatedServerModInitializer {
 	@Override
 	public void onInitializeServer() {
 
-		ServerPlayerEvents.COPY_FROM.register(((oldPlayer, newPlayer, alive) -> ((DoDurabilityAccessor)newPlayer).nodura$setDurabilityMode(((DoDurabilityAccessor)oldPlayer).noDura$getDurabilityMode())));
+		ServerPlayerEvents.COPY_FROM.register(((oldPlayer, newPlayer, alive) -> ((DoDurabilityAccessor)newPlayer).nodura$setDurabilityMode(((DoDurabilityAccessor)oldPlayer).nodura$getDurabilityMode())));
 		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
 
 			LiteralCommandNode<ServerCommandSource> parentNode = CommandManager
@@ -39,7 +39,7 @@ public class NoDura implements DedicatedServerModInitializer {
 					.literal("doDurability")
 					.executes((context -> {
 						ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-						player.sendMessage(Text.literal("doDurability is currently " + (((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DoDurability ? "enabled" : "disabled")));
+						player.sendMessage(Text.literal("doDurability is currently " + (((DoDurabilityAccessor)player).nodura$getDurabilityMode() == NoDuraMode.DoDurability ? "enabled" : "disabled")));
 						return Command.SINGLE_SUCCESS;
 					}))
 					.build();
@@ -50,7 +50,7 @@ public class NoDura implements DedicatedServerModInitializer {
 						boolean doDurability = BoolArgumentType.getBool(context, "value");
 						ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
  						((DoDurabilityAccessor)player).nodura$setDurabilityMode(doDurability ? NoDuraMode.DoDurability : NoDuraMode.NoDurability);
-						player.sendMessage(Text.literal("doDurability has been " + (((DoDurabilityAccessor)player).noDura$getDurabilityMode() == NoDuraMode.DoDurability ? "enabled" : "disabled")));
+						player.sendMessage(Text.literal("doDurability has been " + (((DoDurabilityAccessor)player).nodura$getDurabilityMode() == NoDuraMode.DoDurability ? "enabled" : "disabled")));
 						return Command.SINGLE_SUCCESS;
 					})
 					.build();

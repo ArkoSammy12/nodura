@@ -16,7 +16,7 @@ import xd.arkosammy.nodura.NoDuraMode;
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin implements DoDurabilityAccessor {
 
-    @Shadow public abstract ServerWorld getWorld();
+    @Shadow public abstract ServerWorld getServerWorld();
 
     @Unique
     private NoDuraMode noDuraMode = NoDuraMode.DoDurability;
@@ -27,13 +27,13 @@ public abstract class ServerPlayerEntityMixin implements DoDurabilityAccessor {
     }
 
     @Override
-    public NoDuraMode noDura$getDurabilityMode() {
+    public NoDuraMode nodura$getDurabilityMode() {
         return this.noDuraMode;
     }
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void onServerPlayerEntity(CallbackInfo ci) {
-        this.noDuraMode = this.getWorld().getGameRules().get(NoDura.DEFAULT_NO_DURA_MODE).get();
+        this.noDuraMode = this.getServerWorld().getGameRules().get(NoDura.DEFAULT_NO_DURA_MODE).get();
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("RETURN"))
@@ -43,7 +43,7 @@ public abstract class ServerPlayerEntityMixin implements DoDurabilityAccessor {
 
     @Inject(method = "readCustomDataFromNbt", at = @At("RETURN"))
     private void readCustomData(NbtCompound nbt, CallbackInfo ci){
-        this.noDuraMode = NoDuraMode.fromString(nbt.getString("noDuraMode")).orElse(this.getWorld().getGameRules().get(NoDura.DEFAULT_NO_DURA_MODE).get());
+        this.noDuraMode = NoDuraMode.fromString(nbt.getString("noDuraMode")).orElse(this.getServerWorld().getGameRules().get(NoDura.DEFAULT_NO_DURA_MODE).get());
     }
 
 }
